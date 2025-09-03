@@ -60,7 +60,7 @@ def R_body_to_Fe(phi, theta, psi):
     return rot_z(psi) @ rot_y(theta) @ rot_x(phi)
 
 def body_to_wind(alpha, beta):
-    return rot_y(-alpha) @ rot_z(-beta)
+    return rot_y(alpha) @ rot_z(-beta)
 
 def compute_angles(u, v, w, phi, theta):
     V = math.sqrt(u**2 + v**2 + w**2)
@@ -296,4 +296,5 @@ run_button = tk.Button(root, text="Run Simulation", command=lambda: run_case(cas
 run_button.pack(pady=10)
 
 root.mainloop()
+
 
